@@ -1,0 +1,32 @@
+.box {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.materialCard {
+  padding: 20px;
+}
+
+.heading {
+  font-family: 'Open Sans', sans-sans-serif;
+  font-weight: 600;
+  font-size: 10px;
+}
+
+.paymentBox {
+  height: 80px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paymentSign {
+  vertical-align: top;
+  font-size: 24px;
+}
+
+.paymentAmount {
+  font-size: 42px;
+}
