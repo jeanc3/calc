@@ -7,10 +7,11 @@ const initializeChart = (ctx, { amortization }) => {
   return new Chart(ctx, {
     type: 'line',
     data: {
-      lables: Array(balances.length),
+      labels: Array(balances.length),
       datasets: [{
         label: "Amortization balance",
         data: balances,
+        fill: false,
       }]
     }
   })
@@ -29,7 +30,7 @@ class AmortizationChart extends React.Component {
     updateChart(this.chart, nextProps)
   }
   componentDidMount() {
-    this.chart = initializeChart(this.canvas, this.pros)
+    this.chart = initializeChart(this.canvas, this.props)
   }
   render() {
     return (

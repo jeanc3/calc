@@ -42,10 +42,10 @@ const AmortizationTable = ({ amortization }) => {
                 balance,
               }, i) => (
                 <TableRow key={i}>
-                  <TableRowColumn>(i)</TableRowColumn>
-                  <TableRowColumn>(interest)</TableRowColumn>
-                  <TableRowColumn>(principal)</TableRowColumn>
-                  <TableRowColumn>(balance)</TableRowColumn>
+                  <TableRowColumn>{i+1}</TableRowColumn>
+                  <TableRowColumn>{interest}</TableRowColumn>
+                  <TableRowColumn>{principal}</TableRowColumn>
+                  <TableRowColumn>{balance}</TableRowColumn>
                 </TableRow>
               ))
             }

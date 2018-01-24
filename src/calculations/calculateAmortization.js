@@ -7,15 +7,24 @@ export const calculateAmortization = state => {
   } = state
 
   let balanceRemaining = amount
-
+  let principal = 0
+  // let j=0
   const amortizationMonth = new Array(length * 12).fill({}).map(() => {
-    const interest = balanceRemaining * rate / 100 / 12
-    const principal = payment - interest
-    balanceRemaining -= principal
+    const interest = Math.round(balanceRemaining * rate / 100 / 12)
+    principal = payment - interest
+    // j +=1
+    if (balanceRemaining<payment){
+       principal = balanceRemaining
+       balanceRemaining = 0
+    } else {
+      balanceRemaining -= principal
+    }
+    // console.log(j, interest, principal, balanceRemaining)
+
     return {
-      interest: Math.round(interest),
-      principal: Math.round(principal),
-      balance: Math.round(balanceRemaining),
+      interest: interest,
+      principal: principal,
+      balance: balanceRemaining,
     }
   })
 
@@ -34,8 +43,10 @@ export const calculateAmortization = state => {
       acc.push(amortizationAnnual)
       interestAnnual = 0
       principalAnnual = 0
-    } return acc
+    }
+    return acc
   }, [])
+
   return {
     ...state,
     amortization,

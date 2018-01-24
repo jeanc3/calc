@@ -3,7 +3,7 @@ import './App.css';
 import Inputs from './components/Inputs';
 import Payment from './components/Payment';
 import AmortizationTable from './components/AmortizationTable'
-//import AmortizationChart from './components/AmortizationChart'
+import AmortizationChart from './components/AmortizationChart'
 import {
   calculate,
   validateInput,
@@ -66,6 +66,9 @@ class App extends Component {
             payment={payment}
           />
           <AmortizationTable
+            amortization={amortization}
+          />
+          <AmortizationChart
             amortization={amortization}
           />
         </div>
